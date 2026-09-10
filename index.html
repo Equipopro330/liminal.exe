@@ -1,0 +1,2523 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>liminal.exe</title>
+
+
+<style>
+
+/* =========================================================
+   LIMINAL.EXE // SPACEHEY STYLE
+   =========================================================
+
+   ARCHIVO COMPLETAMENTE EDITABLE
+
+   IMÁGENES QUE PUEDES CAMBIAR:
+
+   1. Fondo general:
+      images/fondo-general.jpg
+
+   2. Portada:
+      images/portada.jpg
+
+   3. Foto de perfil:
+      images/perfil.jpg
+
+   4. GIF detrás del botón:
+      images/gif-fondo.gif
+
+   5. Galería:
+      images/liminal01.jpg
+      images/liminal02.jpg
+      images/liminal03.jpg
+      images/liminal04.jpg
+      images/liminal05.jpg
+      images/liminal06.jpg
+
+========================================================= */
+
+
+/* =========================================================
+   COLORES
+========================================================= */
+
+:root{
+
+    --background:#c9d0cc;
+
+    --panel:#111313;
+
+    --panel2:#181b1a;
+
+    --border:#737d77;
+
+    --light:#e8eee9;
+
+    --text:#dce4df;
+
+    --muted:#9da9a2;
+
+    --green:#b7c9b5;
+
+    --blue:#aebfc7;
+
+    --pink:#d4bfc7;
+
+    --warning:#d4c58f;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:14px;
+
+    color:var(--text);
+
+    background-color:var(--background);
+
+
+    /* =====================================================
+       FONDO GENERAL DE TODA LA PÁGINA
+
+       CAMBIA ESTA IMAGEN:
+
+       images/fondo-general.jpg
+
+       Puedes utilizar JPG, PNG o WEBP.
+
+    ===================================================== */
+
+    background-image:
+
+        linear-gradient(
+            rgba(20,25,22,.35),
+            rgba(10,12,11,.60)
+        ),
+
+        url("images/fondo-general.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+}
+
+
+/* =========================================================
+   EFECTO DE GRANULADO
+========================================================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    opacity:.12;
+
+    background-image:
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 2px,
+            rgba(255,255,255,.25) 3px,
+            transparent 4px
+        );
+
+}
+
+
+/* =========================================================
+   LINKS
+========================================================= */
+
+a{
+
+    color:#d5ded8;
+
+    text-decoration:none;
+
+}
+
+
+a:hover{
+
+    color:white;
+
+    text-decoration:underline;
+
+}
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+========================================================= */
+
+.page{
+
+    width:95%;
+
+    max-width:950px;
+
+    margin:30px auto 50px;
+
+}
+
+
+/* =========================================================
+   HEADER / PORTADA
+========================================================= */
+
+.header{
+
+    height:350px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border:
+        2px solid #252b28;
+
+    border-radius:
+        25px 25px 8px 8px;
+
+
+    /* =====================================================
+       IMAGEN DE PORTADA
+
+       CAMBIA:
+
+       images/portada.jpg
+
+    ===================================================== */
+
+    background-image:
+
+        linear-gradient(
+            rgba(40,45,42,.08),
+            rgba(0,0,0,.48)
+        ),
+
+        url("images/portada.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    box-shadow:
+
+        0 0 0 1px #aeb7b0,
+
+        0 10px 35px
+        rgba(0,0,0,.65);
+
+}
+
+
+/* =========================================================
+   OSCURECER PORTADA
+========================================================= */
+
+.header::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            transparent 40%,
+            rgba(0,0,0,.75)
+        );
+
+    pointer-events:none;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo{
+
+    position:absolute;
+
+    left:24px;
+
+    top:20px;
+
+    z-index:3;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:31px;
+
+    letter-spacing:4px;
+
+    color:white;
+
+    text-shadow:
+        2px 2px 4px black;
+
+}
+
+
+.logo span{
+
+    display:block;
+
+    margin-top:5px;
+
+    font-family:Arial;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    color:#d8e1dc;
+
+}
+
+
+/* =========================================================
+   LINKS DEL HEADER
+========================================================= */
+
+.header-links{
+
+    position:absolute;
+
+    right:25px;
+
+    top:22px;
+
+    z-index:5;
+
+    font-size:13px;
+
+}
+
+
+.header-links a{
+
+    margin-left:8px;
+
+}
+
+
+/* =========================================================
+   BUSCADOR
+========================================================= */
+
+.search{
+
+    position:absolute;
+
+    right:24px;
+
+    top:55px;
+
+    z-index:5;
+
+}
+
+
+.search input{
+
+    width:145px;
+
+    height:23px;
+
+    border:
+        1px solid #666;
+
+    background:
+        rgba(255,255,255,.75);
+
+}
+
+
+.search button{
+
+    height:23px;
+
+    border:
+        1px solid #444;
+
+    background:#ddd;
+
+    color:#222;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================================================
+   TEXTO PRINCIPAL DEL HEADER
+========================================================= */
+
+.header-title{
+
+    position:absolute;
+
+    left:25px;
+
+    bottom:25px;
+
+    z-index:5;
+
+}
+
+
+.header-title h1{
+
+    margin:0;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:39px;
+
+    font-weight:normal;
+
+    letter-spacing:5px;
+
+    text-shadow:
+        3px 3px 5px black;
+
+}
+
+
+.header-title p{
+
+    margin:
+        5px 0 0;
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    color:#d8ded9;
+
+}
+
+
+/* =========================================================
+   MENÚ
+========================================================= */
+
+.nav{
+
+    padding:11px 5px;
+
+    text-align:center;
+
+    background:
+        rgba(10,13,12,.96);
+
+    border-left:
+        2px solid #646f69;
+
+    border-right:
+        2px solid #646f69;
+
+    box-shadow:
+        0 5px 14px rgba(0,0,0,.7);
+
+}
+
+
+.nav a{
+
+    font-size:13px;
+
+    margin:
+        0 6px;
+
+    color:#d1dad5;
+
+}
+
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.content{
+
+    display:grid;
+
+    grid-template-columns:
+        285px 1fr;
+
+    gap:15px;
+
+    margin-top:16px;
+
+    padding:14px;
+
+    background:
+
+        linear-gradient(
+            rgba(8,10,9,.96),
+            rgba(18,21,19,.98)
+        );
+
+    border:
+        3px solid #282e2b;
+
+    border-radius:
+        20px 20px 5px 5px;
+
+    box-shadow:
+
+        inset 0 0 35px black,
+
+        0 10px 30px
+        rgba(0,0,0,.65);
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar{
+
+    padding-right:15px;
+
+    border-right:
+        1px dashed #69736d;
+
+}
+
+
+.username{
+
+    margin:
+        0 0 3px;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:27px;
+
+    letter-spacing:1px;
+
+    color:#f1f4ef;
+
+}
+
+
+.status{
+
+    margin-bottom:12px;
+
+    font-size:11px;
+
+    color:#a8b5ad;
+
+}
+
+
+/* =========================================================
+   FOTO DE PERFIL
+========================================================= */
+
+.profile-image{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border:
+        2px solid #6d7870;
+
+    filter:
+        saturate(.7)
+        contrast(.9)
+        brightness(.8);
+
+    transition:
+        .5s;
+
+}
+
+
+.profile-image:hover{
+
+    filter:
+        saturate(1)
+        contrast(1)
+        brightness(1);
+
+}
+
+
+/* =========================================================
+   CAJAS
+========================================================= */
+
+.box{
+
+    margin-top:15px;
+
+    padding:11px;
+
+    background:
+        rgba(30,34,31,.72);
+
+    border:
+        1px solid #49534d;
+
+}
+
+
+.box-title{
+
+    padding-bottom:7px;
+
+    margin-bottom:9px;
+
+    border-bottom:
+        1px dashed #5b655f;
+
+    color:#dce5df;
+
+    font-weight:bold;
+
+}
+
+
+.box p{
+
+    margin:5px 0;
+
+    color:#aab5ae;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   LINKS DEL SIDEBAR
+========================================================= */
+
+.side-links a{
+
+    display:block;
+
+    padding:5px 0;
+
+    font-size:12px;
+
+    color:#b7c3bc;
+
+}
+
+
+.side-links a:hover{
+
+    padding-left:5px;
+
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.main{
+
+    min-width:0;
+
+}
+
+
+/* =========================================================
+   BOTÓN EDITAR MI PERFIL
+
+   AQUÍ PUEDES CAMBIAR EL GIF:
+
+   images/gif-fondo.gif
+
+========================================================= */
+
+.edit-profile{
+
+    display:block;
+
+    padding:25px 18px;
+
+    margin-bottom:18px;
+
+    text-align:center;
+
+
+    /* GIF DE FONDO */
+
+    background-image:
+
+        linear-gradient(
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.50)
+        ),
+
+        url("images/gif-fondo.gif");
+
+    background-size:cover;
+
+    background-position:center;
+
+
+    border:
+        2px solid #747e77;
+
+    color:white;
+
+    font-weight:bold;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    text-shadow:
+        2px 2px 4px black;
+
+    transition:.4s;
+
+    min-height:90px;
+
+}
+
+
+.edit-profile:hover{
+
+    filter:
+        brightness(1.25);
+
+    letter-spacing:4px;
+
+}
+
+
+/* =========================================================
+   SECCIONES
+========================================================= */
+
+.section{
+
+    margin-bottom:28px;
+
+}
+
+
+.section-title{
+
+    margin:
+        0 0 12px;
+
+    padding-bottom:7px;
+
+    border-bottom:
+        1px dashed #59635d;
+
+    color:#e7ede8;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:18px;
+
+}
+
+
+/* =========================================================
+   TEXTO
+========================================================= */
+
+.description{
+
+    color:#b5c0b9;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+
+.quote{
+
+    padding-left:14px;
+
+    border-left:
+        3px solid #91a294;
+
+    color:#d2dbd5;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-style:italic;
+
+}
+
+
+/* =========================================================
+   IMAGEN DESTACADA
+========================================================= */
+
+.featured{
+
+    width:100%;
+
+    height:310px;
+
+    object-fit:cover;
+
+    border:
+        2px solid #606b64;
+
+    filter:
+        saturate(.72)
+        brightness(.82);
+
+    transition:.4s;
+
+}
+
+
+.featured:hover{
+
+    filter:
+        saturate(1)
+        brightness(1);
+
+}
+
+
+/* =========================================================
+   GALERÍA
+========================================================= */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:8px;
+
+}
+
+
+.gallery img{
+
+    width:100%;
+
+    height:125px;
+
+    object-fit:cover;
+
+    border:
+        1px solid #5d675f;
+
+    filter:
+        saturate(.65)
+        brightness(.75);
+
+    transition:.35s;
+
+}
+
+
+.gallery img:hover{
+
+    transform:
+        scale(1.04);
+
+    filter:
+        saturate(1)
+        brightness(1);
+
+    z-index:4;
+
+    box-shadow:
+
+        0 0 15px
+        rgba(220,230,220,.35);
+
+}
+
+
+/* =========================================================
+   NIVELES
+========================================================= */
+
+.levels{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:10px;
+
+}
+
+
+.level{
+
+    background:
+        #171a18;
+
+    border:
+        1px solid #4c5650;
+
+    overflow:hidden;
+
+}
+
+
+.level img{
+
+    width:100%;
+
+    height:145px;
+
+    object-fit:cover;
+
+    filter:
+        saturate(.65)
+        brightness(.7);
+
+}
+
+
+.level h3{
+
+    margin:
+        9px;
+
+    color:#e0e8e2;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:14px;
+
+}
+
+
+.level p{
+
+    margin:
+        9px;
+
+    color:#929f97;
+
+    font-size:11px;
+
+    line-height:1.5;
+
+}
+
+
+/* =========================================================
+   TABLA DE INFORMACIÓN
+========================================================= */
+
+.info-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+.info-table td{
+
+    padding:7px;
+
+    border-bottom:
+        1px dashed #424a45;
+
+    font-size:12px;
+
+}
+
+
+.info-table td:first-child{
+
+    width:35%;
+
+    color:#d5ded8;
+
+    font-weight:bold;
+
+}
+
+
+.info-table td:last-child{
+
+    color:#9ca9a1;
+
+}
+
+
+/* =========================================================
+   AMIGOS
+========================================================= */
+
+.friends{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:8px;
+
+}
+
+
+.friend{
+
+    text-align:center;
+
+    font-size:10px;
+
+    color:#aeb9b2;
+
+}
+
+
+.friend img{
+
+    width:100%;
+
+    height:85px;
+
+    object-fit:cover;
+
+    border:
+        1px solid #566159;
+
+    filter:
+        saturate(.65)
+        brightness(.75);
+
+}
+
+
+.friend:hover img{
+
+    filter:
+        saturate(1)
+        brightness(1);
+
+}
+
+
+/* =========================================================
+   BLOG
+========================================================= */
+
+.blog-entry{
+
+    padding:13px;
+
+    margin-bottom:10px;
+
+    background:
+        rgba(28,32,29,.75);
+
+    border:
+        1px solid #454f49;
+
+}
+
+
+.blog-date{
+
+    font-size:10px;
+
+    color:#829087;
+
+}
+
+
+.blog-title{
+
+    margin:
+        5px 0;
+
+    color:#e3ebe5;
+
+    font-weight:bold;
+
+}
+
+
+.blog-text{
+
+    color:#aab5ae;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+
+/* =========================================================
+   COMENTARIOS
+========================================================= */
+
+.comment{
+
+    display:flex;
+
+    gap:10px;
+
+    padding:
+        10px 0;
+
+    border-bottom:
+        1px dashed #414943;
+
+}
+
+
+.comment img{
+
+    width:55px;
+
+    height:55px;
+
+    object-fit:cover;
+
+}
+
+
+.comment-name{
+
+    font-weight:bold;
+
+    color:#dce5df;
+
+}
+
+
+.comment-text{
+
+    margin-top:4px;
+
+    font-size:11px;
+
+    color:#929e96;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#69766e;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE / CELULAR
+========================================================= */
+
+@media(max-width:750px){
+
+    .content{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .sidebar{
+
+        padding-right:0;
+
+        padding-bottom:15px;
+
+        border-right:none;
+
+        border-bottom:
+            1px dashed #69736d;
+
+    }
+
+
+    .gallery{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .levels{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .friends{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+
+    .header-title h1{
+
+        font-size:27px;
+
+    }
+
+
+    .search{
+
+        display:none;
+
+    }
+
+}
+
+/* =========================================================
+   REPRODUCTOR DE MÚSICA
+========================================================= */
+
+.music-player{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:99999;
+}
+
+.music-player button{
+    padding:10px 15px;
+    border:1px solid #737d77;
+    background:rgba(10,13,12,.92);
+    color:#dce4df;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:11px;
+    letter-spacing:1px;
+    cursor:pointer;
+    box-shadow:0 4px 15px rgba(0,0,0,.7);
+}
+
+.music-player button:hover{
+    background:rgba(35,40,37,.95);
+    color:white;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+    
+
+<body>
+
+<!-- =====================================================
+     MÚSICA DE FONDO
+===================================================== -->
+
+<audio id="backgroundMusic" loop>
+    <source src="music/musica-liminal.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-player">
+    <button id="musicButton" onclick="toggleMusic()">
+        ♫ MÚSICA: OFF
+    </button>
+</div>
+
+<div class="page">
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="header">
+
+
+    <div class="logo">
+
+        liminal.exe
+
+        <span>
+            un lugar entre lugares
+        </span>
+
+    </div>
+
+
+    <div class="header-links">
+
+        <a href="#">
+            Ayuda
+        </a>
+
+        |
+
+        <a href="#">
+            Iniciar sesion
+        </a>
+
+    </div>
+
+
+    <div class="search">
+
+        <input
+            type="text"
+            placeholder="buscar..."
+        >
+
+        <button>
+            Buscar
+        </button>
+
+    </div>
+
+
+    <div class="header-title">
+
+        <h1>
+            ESTÁS AQUÍ
+        </h1>
+
+        <p>
+            PERO NO RECUERDAS HABER LLEGADO
+        </p>
+
+    </div>
+
+
+</header>
+
+
+<!-- =====================================================
+     MENÚ
+===================================================== -->
+
+<nav class="nav">
+
+    <a href="#">
+        Inicio
+    </a>
+
+    |
+
+    <a href="#about">
+        Sobre mí
+    </a>
+
+    |
+
+    <a href="#gallery">
+        Galería
+    </a>
+
+    |
+
+    <a href="#levels">
+        Niveles
+    </a>
+
+    |
+
+    <a href="#blog">
+        Blog
+    </a>
+
+    |
+
+    <a href="#friends">
+        Amigos
+    </a>
+
+    |
+
+    <a href="#messages">
+        Mensajes
+    </a>
+
+    |
+
+    <a href="#">
+        Grupos
+    </a>
+
+    |
+
+    <a href="#">
+        Salir
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
+<div class="content">
+
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<aside class="sidebar">
+
+
+    <!-- CAMBIA AQUÍ TU NOMBRE -->
+
+    <h2 class="username">
+
+        dreamer.exe
+
+    </h2>
+
+
+    <div class="status">
+
+        ● EN LÍNEA
+
+        <br>
+
+        en algún otro lugar
+
+    </div>
+
+
+    <!-- =================================================
+         FOTO DE PERFIL
+
+         CAMBIA:
+
+         images/perfil.jpg
+
+    ================================================== -->
+
+    <img
+
+        class="profile-image"
+
+        src="images/perfil.jpg"
+
+        alt="Foto de perfil"
+
+    >
+
+
+    <!-- =================================================
+         SOBRE MÍ
+    ================================================== -->
+
+    <div class="box">
+
+
+        <div class="box-title">
+
+            SOBRE MÍ
+
+        </div>
+
+
+        <p>
+
+            Colecciono fotografías de lugares
+            que no parecen reales.
+
+        </p>
+
+
+        <p>
+
+            A veces me pregunto si estos lugares
+            existían antes de que yo los encontrara.
+
+        </p>
+
+
+    </div>
+
+
+    <!-- =================================================
+         INFORMACIÓN DEL PERFIL
+    ================================================== -->
+
+    <div class="box">
+
+
+        <div class="box-title">
+
+            PERFIL
+
+        </div>
+
+
+        <p>
+
+            <b>EDAD:</b>
+            ???
+
+            <br>
+
+            <b>UBICACIÓN:</b>
+            Desconocida
+
+            <br>
+
+            <b>ÚLTIMA VEZ VISTO:</b>
+            03:17 AM
+
+            <br>
+
+            <b>ESTADO DE ÁNIMO:</b>
+            nostálgico
+
+            <br>
+
+            <b>NIVEL:</b>
+            ???
+
+        </p>
+
+
+    </div>
+
+
+    <!-- =================================================
+         MIS ENLACES
+    ================================================== -->
+
+    <div class="box">
+
+
+        <div class="box-title">
+
+            MI ESPACIO
+
+        </div>
+
+
+        <div class="side-links">
+
+
+            <a href="#blog">
+
+                → Mi Blog
+
+            </a>
+
+
+            <a href="#gallery">
+
+                → Mis Fotos
+
+            </a>
+
+
+            <a href="#levels">
+
+                → Mis Niveles
+
+            </a>
+
+
+            <a href="#">
+
+                → Mi Música
+
+            </a>
+
+
+            <a href="#">
+
+                → Mis Favoritos
+
+            </a>
+
+
+            <a href="#messages">
+
+                → Mis Mensajes
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</aside>
+
+
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+===================================================== -->
+
+<main class="main">
+
+
+    <!-- =================================================
+         BOTÓN CON GIF
+
+         CAMBIA EL GIF DESDE CSS:
+
+         images/gif-fondo.gif
+
+    ================================================== -->
+
+    <a
+        href="#"
+        class="edit-profile"
+    >
+
+        [ EDITAR MI PERFIL ]
+
+    </a>
+
+
+<!-- =====================================================
+     BLOG PRINCIPAL
+===================================================== -->
+
+<section
+    class="section"
+    id="about"
+>
+
+
+    <h2 class="section-title">
+
+        La última entrada de dreamer.exe
+
+    </h2>
+
+
+    <p class="description">
+
+        Hoy encontré otro lugar.
+
+        <br><br>
+
+        Había un enorme campo de flores
+        creciendo dentro de un edificio vacío.
+
+        <br><br>
+
+        Permanecí allí durante casi una hora.
+
+        <br><br>
+
+        No había personas.
+
+        <br>
+
+        No había pájaros.
+
+        <br>
+
+        No había viento.
+
+        <br><br>
+
+        Pero las flores se estaban moviendo.
+
+    </p>
+
+
+    <p class="quote">
+
+        "Parecía un lugar que había soñado
+        cuando era niño."
+
+    </p>
+
+
+</section>
+
+
+<!-- =====================================================
+     IMAGEN DESTACADA
+===================================================== -->
+
+<section class="section">
+
+
+    <h2 class="section-title">
+
+        UBICACIÓN ACTUAL
+
+    </h2>
+
+
+    <!--
+
+        CAMBIA ESTA IMAGEN:
+
+        images/portada.jpg
+
+    -->
+
+    <img
+
+        class="featured"
+
+        src="images/portada.jpg"
+
+        alt="Espacio liminal"
+
+    >
+
+
+</section>
+
+
+<!-- =====================================================
+     GALERÍA
+===================================================== -->
+
+<section
+    class="section"
+    id="gallery"
+>
+
+
+    <h2 class="section-title">
+
+        MI GALERÍA DE FOTOS
+
+    </h2>
+
+
+    <div class="gallery">
+
+
+        <img
+            src="images/liminal01.jpg"
+            alt="Espacio liminal"
+        >
+
+
+        <img
+            src="images/liminal02.jpg"
+            alt="Espacio liminal"
+        >
+
+
+        <img
+            src="images/liminal03.jpg"
+            alt="Espacio liminal"
+        >
+
+
+        <img
+            src="images/liminal04.jpg"
+            alt="Espacio liminal"
+        >
+
+
+        <img
+            src="images/liminal05.jpg"
+            alt="Espacio liminal"
+        >
+
+
+        <img
+            src="images/liminal06.jpg"
+            alt="Espacio liminal"
+        >
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     NIVELES
+===================================================== -->
+
+<section
+    class="section"
+    id="levels"
+>
+
+
+    <h2 class="section-title">
+
+        LUGARES QUE HE ENCONTRADO
+
+    </h2>
+
+
+    <div class="levels">
+
+
+        <!-- =================================================
+             NIVEL 00
+        ================================================== -->
+
+        <article class="level">
+
+
+            <img
+
+                src="images/liminal10.jpg"
+                alt="Nivel 00"
+
+            >
+
+
+            <h3>
+
+                NIVEL 00
+                — EL JARDÍN
+
+            </h3>
+
+
+            <p>
+
+                Un prado imposible que crece
+                dentro de una habitación silenciosa.
+
+                <br><br>
+
+                Peligro:
+                ★☆☆☆☆
+
+            </p>
+
+
+        </article>
+
+
+        <!-- =================================================
+             NIVEL 01
+        ================================================== -->
+
+        <article class="level">
+
+
+            <img
+
+                src="images/liminal08.jpg"
+
+                alt="Nivel 01"
+
+            >
+
+
+            <h3>
+
+                NIVEL 01
+                — LA PISCINA
+
+            </h3>
+
+
+            <p>
+
+                Agua tibia.
+
+                Luces azules.
+
+                No existe un fondo visible.
+
+                <br><br>
+
+                Peligro:
+                ★★☆☆☆
+
+            </p>
+
+
+        </article>
+
+
+        <!-- =================================================
+             NIVEL 02
+        ================================================== -->
+
+        <article class="level">
+
+
+            <img
+
+                src="images/liminal07.jpg"
+
+                alt="Nivel 02"
+
+            >
+
+
+            <h3>
+
+                NIVEL 02
+                — LA ESCUELA
+
+            </h3>
+
+
+            <p>
+
+                Las luces siempre están encendidas.
+
+                <br><br>
+
+                Ya no asiste nadie.
+
+                <br><br>
+
+                Peligro:
+                ★★★☆☆
+
+            </p>
+
+
+        </article>
+
+
+        <!-- =================================================
+             NIVEL 03
+        ================================================== -->
+
+        <article class="level">
+
+
+            <img
+
+                src="images/liminal09.jpg"
+
+                alt="Nivel 03"
+
+            >
+
+
+            <h3>
+
+                NIVEL 03
+                — EL PASILLO
+
+            </h3>
+
+
+            <p>
+
+                Cada puerta conduce
+                al mismo pasillo.
+
+                <br><br>
+
+                Peligro:
+                ★★★★☆
+
+            </p>
+
+
+        </article>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     INFORMACIÓN
+===================================================== -->
+
+<section class="section">
+
+
+    <h2 class="section-title">
+
+        INFORMACIÓN DEL USUARIO
+
+    </h2>
+
+
+    <table class="info-table">
+
+
+        <tr>
+
+            <td>
+                Se unió
+            </td>
+
+            <td>
+                04 / 09 / 2026
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Último acceso
+            </td>
+
+            <td>
+                03:17 AM
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Ubicación actual
+            </td>
+
+            <td>
+                Desconocida
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Nivel favorito
+            </td>
+
+            <td>
+                El Jardín
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td>
+                Estado
+            </td>
+
+            <td>
+                Vagando
+            </td>
+
+        </tr>
+
+
+    </table>
+
+
+</section>
+
+
+<!-- =====================================================
+     BLOG
+===================================================== -->
+
+<section
+    class="section"
+    id="blog"
+>
+
+
+    <h2 class="section-title">
+
+        ENTRADAS DEL BLOG
+
+    </h2>
+
+
+    <!-- ENTRADA 1 -->
+
+    <article class="blog-entry">
+
+
+        <div class="blog-date">
+
+            04 de septiembre de 2026
+
+        </div>
+
+
+        <div class="blog-title">
+
+            Encontré una puerta detrás del cielo.
+
+        </div>
+
+
+        <div class="blog-text">
+
+            No sé de qué otra manera explicarlo.
+
+            <br><br>
+
+            Había una pequeña puerta flotando
+            sobre el pasto.
+
+            <br><br>
+
+            No la abrí.
+
+        </div>
+
+
+    </article>
+
+
+    <!-- ENTRADA 2 -->
+
+    <article class="blog-entry">
+
+
+        <div class="blog-date">
+
+            01 de septiembre de 2026
+
+        </div>
+
+
+        <div class="blog-title">
+
+            La piscina no estaba aquí ayer.
+
+        </div>
+
+
+        <div class="blog-text">
+
+            El mismo edificio.
+
+            <br>
+
+            La misma habitación.
+
+            <br>
+
+            Una piscina diferente.
+
+            <br><br>
+
+            Creo que alguien más está cambiando
+            estos lugares.
+
+        </div>
+
+
+    </article>
+
+
+</section>
+
+
+<!-- =====================================================
+     AMIGOS
+===================================================== -->
+
+<section
+    class="section"
+    id="friends"
+>
+
+
+    <h2 class="section-title">
+
+        MI ESPACIO DE AMIGOS
+
+    </h2>
+
+
+    <div class="friends">
+
+
+        <div class="friend">
+
+
+            <img
+
+                src="images/liminal01.jpg"
+
+                alt="Amiga"
+
+            >
+
+            <br>
+
+            silentgirl
+
+        </div>
+
+
+        <div class="friend">
+
+
+            <img
+
+                src="images/liminal02.jpg"
+
+                alt="Amigo"
+
+            >
+
+            <br>
+
+            poolboy
+
+        </div>
+
+
+        <div class="friend">
+
+
+            <img
+
+                src="images/liminal03.jpg"
+
+                alt="Amigo"
+
+            >
+
+            <br>
+
+            lostkid
+
+        </div>
+
+
+        <div class="friend">
+
+
+            <img
+
+                src="images/liminal04.jpg"
+
+                alt="Amigo"
+
+            >
+
+            <br>
+
+            no_signal
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     COMENTARIOS
+===================================================== -->
+
+<section
+    class="section"
+    id="messages"
+>
+
+
+    <h2 class="section-title">
+
+        COMENTARIOS
+
+    </h2>
+
+
+    <!-- COMENTARIO 1 -->
+
+    <div class="comment">
+
+
+        <img
+
+            src="images/liminal05.jpg"
+
+            alt="Usuario"
+
+        >
+
+
+        <div>
+
+
+            <div class="comment-name">
+
+                silentgirl
+
+            </div>
+
+
+            <div class="comment-text">
+
+                Este lugar se siente familiar...
+
+                <br>
+
+                Creo que ya lo había visto antes.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <!-- COMENTARIO 2 -->
+
+    <div class="comment">
+
+
+        <img
+
+            src="images/liminal06.jpg"
+
+            alt="Usuario"
+
+        >
+
+
+        <div>
+
+
+            <div class="comment-name">
+
+                no_signal
+
+            </div>
+
+
+            <div class="comment-text">
+
+                No atravieses la puerta azul.
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MENSAJE FINAL
+===================================================== -->
+
+<section class="section">
+
+
+    <h2 class="section-title">
+
+        MENSAJE DESDE NINGUNA PARTE
+
+    </h2>
+
+
+    <p class="description">
+
+        Si estás leyendo esto,
+
+        <br><br>
+
+        probablemente estás en algún lugar
+        donde no deberías estar.
+
+        <br><br>
+
+        No te preocupes.
+
+        <br><br>
+
+        No estás perdido.
+
+        <br><br>
+
+        Estás exactamente donde
+        se suponía que debías estar.
+
+    </p>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    LIMINAL.EXE
+
+    <br><br>
+
+    EST. 1999 // ÚLTIMA ACTUALIZACIÓN 03:17 AM
+
+    <br><br>
+
+    <span>
+
+        sigues aquí.
+
+    </span>
+
+</footer>
+
+</div>
+
+
+<!-- =====================================================
+     CONTROL DE MÚSICA
+===================================================== -->
+
+<script>
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.volume = 0.35;
+
+        music.play().then(function(){
+
+            musicButton.innerHTML = "♫ MÚSICA: ON";
+
+        }).catch(function(){
+
+            musicButton.innerHTML = "♫ ERROR DE AUDIO";
+
+        });
+
+    }else{
+
+        music.pause();
+
+        musicButton.innerHTML = "♫ MÚSICA: OFF";
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
